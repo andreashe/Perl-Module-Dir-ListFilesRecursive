@@ -6,7 +6,7 @@ use strict;
 use vars qw(@ISA @EXPORT %EXPORT_TAGS $VERSION);
 use Exporter; 
 
-our $VERSION='0.05';
+our $VERSION='0.06';
 
 
 @ISA = qw(Exporter);
@@ -253,7 +253,7 @@ sub _filter_file_array{
     if (($para{no_hidden} ne '') && ($i=~ m/^\./)){$ok=0};
 
     my $ext=lc($para{ext}) || lc($para{extension});
-    if (exists $para{ext}){
+    if ($ext){
       if ($i=~ m/\.$ext$/i){$ok=1}else{$ok=0};
     };
 
